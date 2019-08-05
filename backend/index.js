@@ -60,6 +60,8 @@ router.post('/register', (req, res) => {
             const  accessToken  =  jwt.sign({ id:  user.id }, SECRET_KEY, {
                 expiresIn:  expiresIn
             });
+            user.access_token = accessToken;
+            user.expires_in = expiresIn;
             res.status(200).send({ "user":  user, "access_token":  accessToken, "expires_in":  expiresIn          
             });
         });

@@ -22,7 +22,7 @@ login(form){
   console.log(form.value);
   this.authService.singIn(form.value).subscribe((res)=>{
     console.log("Logged in!");
-    this.router.navigateByUrl('home');
+    this.router.navigateByUrl('auth/home');
   })  
 }
 }
